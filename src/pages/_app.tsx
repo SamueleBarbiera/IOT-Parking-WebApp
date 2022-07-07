@@ -1,5 +1,4 @@
 import { SessionProvider } from 'next-auth/react'
-import type { AppProps } from 'next/app'
 import { AppType } from 'next/dist/shared/lib/utils'
 import NextNProgress from 'nextjs-progressbar'
 import { CartProvider } from 'use-shopping-cart'

@@ -3,9 +3,7 @@
 module.exports = {
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
     content: {
-        content: [
-            './src/**/*.{js,ts,jsx,tsx}',
-        ],
+        content: ['./src/**/*.{js,ts,jsx,tsx}'],
         options: {
             safelist: [],
         },
