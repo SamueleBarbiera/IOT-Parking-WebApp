@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
     content: {
         enabled: process.env.NODE_ENV === 'production',
-        content: ['./src/**/*.{js,ts,jsx,tsx}'],
+        content: [
+            './src/**/*.{js,ts,jsx,tsx}',
+            './src/pages/**/*.{js,ts,jsx,tsx}',
+            './src/components/**/*.{js,ts,jsx,tsx}',
+        ],
         options: {
             safelist: [],
         },
