@@ -2,7 +2,7 @@
 
 module.exports = {
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
-    content: ['./src/**/*.tsx'],
+    content: ['./src/pages/**/*.{js,jsx,ts,tsx}', './src/components/**/*.{js,jsx,ts,tsx}'],
     theme: {
         container: {
             center: true,
