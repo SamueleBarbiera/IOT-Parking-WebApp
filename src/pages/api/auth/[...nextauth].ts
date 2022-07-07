@@ -110,9 +110,9 @@ export const authOptions: NextAuthOptions = {
     },
     callbacks: {
         async session({ session, token, user }: any) {
-            console.log("🚀 - file: [...nextauth].ts - line 113 - session - token", token)
-            console.log("🚀 - file: [...nextauth].ts - line 113 - session - user", user)
-            console.log("🚀 - file: [...nextauth].ts - line 113 - session - session", session)
+            console.log('🚀 - file: [...nextauth].ts - line 113 - session - token', token)
+            console.log('🚀 - file: [...nextauth].ts - line 113 - session - user', user)
+            console.log('🚀 - file: [...nextauth].ts - line 113 - session - session', session)
             session.jwt = user.jwt
             session.id = user.id
             return session
@@ -147,6 +147,24 @@ export const authOptions: NextAuthOptions = {
                 String(process.env.GOOGLE_CLIENT_ID),
                 String(process.env.GOOGLE_CLIENT_SECRET)
             )
+        },
+        async signIn() {
+            const isAllowedToSignIn = true
+            if (isAllowedToSignIn) {
+                return true
+            } else {
+                // Return false to display a default error message
+                return false
+                // Or you can return a URL to redirect to:
+                // return '/unauthorized'
+            }
+        },
+        async redirect({ url, baseUrl }) {
+            // Allows relative callback URLs
+            if (url.startsWith('/')) return `${baseUrl}${url}`
+            // Allows callback URLs on the same origin
+            else if (new URL(url).origin === baseUrl) return url
+            return baseUrl
         },
     },
     pages: {
