@@ -12,7 +12,7 @@
         "start": "next start",
         "lint": "npm-run-all --parallel npm lint --fix next lint",
         "lint-fix": "npm lint --fix",
-        "build:1-generate": "prisma generate",
+        "build:1-generate": "npx tailwindcss -o ./src/styles/build.css --minify && prisma generate",
         "_build:2-migrate": "prisma migrate deploy",
         "build:3-next": "cross-env NODE_ENV=production next build",
         "build:4-server": "tsc --project tsconfig.server.json",
