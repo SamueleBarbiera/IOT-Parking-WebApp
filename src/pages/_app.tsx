@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { AppType } from 'next/dist/shared/lib/utils'
 import NextNProgress from 'nextjs-progressbar'
 import { CartProvider } from 'use-shopping-cart'
-import '../styles/build'
+import '../styles/build.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 const CURRENCY = 'EUR'
 
